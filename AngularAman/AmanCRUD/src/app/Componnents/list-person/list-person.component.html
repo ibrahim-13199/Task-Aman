@@ -14,11 +14,12 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let item of Persons">
+        <tr *ngFor="let item of Persons" >
 
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.age}}</td>
+            
             <td>{{item.city}}</td>           
             <td>{{item.country}}</td>
          
@@ -27,15 +28,9 @@
             </td>
             <td>
 
-                <button type="button" class="btn btn-warning">Edit</button>
+                <button type="button" class="btn btn-warning" routerLink="edit/{{item.id}}"  >Edit</button>
             </td>
-                    <!--
-
-         <td>
-            <button routerLink="/Edit/{{item.productId}}" class="bg-warning" style="border: none;"><a ><fa-icon [icon]="faEdit" style="color: white;"></fa-icon></a>  </button>
-         </td> -->
-
-        
+    
         
         </tr>
     </tbody>

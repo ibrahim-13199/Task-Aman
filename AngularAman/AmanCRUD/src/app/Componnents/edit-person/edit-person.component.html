@@ -1,1 +1,34 @@
-<p>edit-person works!</p>
+
+ <div class="container">
+    <form #NewPerson="ngForm">
+      
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"> name</label><input name="name"
+          [(ngModel)]="person.name" type="text" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp" />
+    
+      </div>
+    
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">age</label><input name="age"
+          [(ngModel)]="person.age" type="number" class="form-control" id="exampleInputPassword1" />
+      </div>
+    
+     
+      <select  class="form-control" name="PersonAddress" [(ngModel)]="person.addressId">
+        <option  [value]="0" selected>  select City  </option>
+        <option *ngFor="let address of AllAddress" [value]="address.id">  {{address.city}}  </option>
+    
+      </select>
+    
+      <br>
+    
+      <select  class="form-control" name="PersonAddress" [(ngModel)]="person.addressId">
+        <option  [value]="0" selected>  select Country  </option>
+        <option *ngFor="let address of AllAddress" [value]="address.id">  {{address.country}}  </option>
+    
+      </select>
+               <button type="button" data-bs-dismiss="modal" (click)="EditPerson(person)" class="btn btn-primary">Add</button>
+    
+    </form>
+    </div> 

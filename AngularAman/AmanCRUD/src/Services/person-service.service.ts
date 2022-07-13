@@ -40,7 +40,7 @@ UpdatePerson(id:any,Person:any){
 }
 
 DeletePerson(id:any){
-   
+   console.log(`${this.baseUrl}/Person/${id}`)
   return this.http.delete(`${this.baseUrl}/Person/${id}`)
 
 }

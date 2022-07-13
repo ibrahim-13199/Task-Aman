@@ -17,6 +17,8 @@ export class AddPersonComponent implements OnInit {
       this.AllAddress=data1})}
   AddNewPerson(obj:any)
   {
+    console.log(obj);
+    console.log(this.person);
     this.Service.AddPerson(obj).subscribe(()=>
     window.location.reload()
     )

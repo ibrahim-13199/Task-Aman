@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:"PersonList",component:ListPersonComponent},
   {path:"",component:ListPersonComponent},
   {path:"addperson",component:AddPersonComponent},
-  {path:"edit",component:EditPersonComponent},
+  {path:"edit/:id",component:EditPersonComponent},
   {path:"person/:id",component:PersondetailsComponent},
 
 ];
