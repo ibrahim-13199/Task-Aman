@@ -1,0 +1,43 @@
+<h1 >Person Data</h1>
+
+<table class="table table-border table-hover " >
+    <thead>
+
+        <th>Person Id</th>
+        <th>Person Name</th>
+        <th>Person Age</th>
+        <th>Person City</th>
+        <th>Person Country</th>
+        <th>Delete</th>
+        <th>Edit</th>
+
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of Persons">
+
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.city}}</td>           
+            <td>{{item.country}}</td>
+         
+            <td>
+                <button (click)="delete(item.id)" type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+
+                <button type="button" class="btn btn-warning">Edit</button>
+            </td>
+                    <!--
+
+         <td>
+            <button routerLink="/Edit/{{item.productId}}" class="bg-warning" style="border: none;"><a ><fa-icon [icon]="faEdit" style="color: white;"></fa-icon></a>  </button>
+         </td> -->
+
+        
+        
+        </tr>
+    </tbody>
+    <a type="button" class="btn btn-primary" routerLink="addperson">NEW</a>
+</table>

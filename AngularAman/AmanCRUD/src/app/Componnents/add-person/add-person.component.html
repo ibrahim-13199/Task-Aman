@@ -1,0 +1,49 @@
+
+<div class="container">
+<form #NewPerson="ngForm">
+  
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> name</label><input name="name"
+      [(ngModel)]="person.name" type="text" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" />
+
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">age</label><input name="age"
+      [(ngModel)]="person.age" type="number" class="form-control" id="exampleInputPassword1" />
+  </div>
+
+  <!-- <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">city</label><input name="city" [(ngModel)]="person.city"
+      type="text" class="form-control" id="exampleInputPassword1" />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">country</label>
+    <input name="country" [(ngModel)]="person.country" type="text" class="form-control" id="exampleInputPassword1" />
+  </div> -->
+  <select  class="form-control" name="PersonAddress" [(ngModel)]="person.addressId">
+
+    <option *ngFor="let address of AllAddress" [value]="address.Id">  {{address.city}}  </option>
+
+  </select>
+
+  <br>
+
+  <select  class="form-control" name="PersonAddress" [(ngModel)]="person.addressId">
+
+    <option *ngFor="let address of AllAddress" [value]="address.Id">  {{address.country}}  </option>
+
+  </select>
+
+</form>
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+    Close
+  </button>
+  <button type="button" data-bs-dismiss="modal" (click)="AddNewPerson(person)" class="btn btn-primary">Add</button>
+</div>
+</div>
